@@ -1,0 +1,72 @@
+
+http://localhost:5000/customer/
+Content-Type: application/json
+
+
+###
+
+http://localhost:5000/customer/21
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:5000/customer/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "olVersion": 2,
+    "customernumber": "000100200",
+    "name": "Name1",
+    "forename": "Vorname1 Update 1",
+    "bdate": "2001-01-09T23:00:00.000+00:00",
+    "salutation": "Herr",
+    "createdat": "2024-02-28T23:00:00.000+00:00",
+    "changedat": "2024-02-28T23:00:00.000+00:00"
+  }
+
+
+###
+
+PUT http://localhost:5000/customer/
+Content-Type: application/json
+
+{
+    "customernumber": "020100200",
+    "name": "Name10",
+    "forename": "Vorname10",
+    "bdate": "2001-01-09T23:00:00.000+00:00",
+    "salutation": "Herr"
+}
+
+###
+
+DELETE http://localhost:5000/customer/14
+Content-Type: application/json
+
+###
+
+http://localhost:5000/actuator
+
+###
+
+http://localhost:5000/swagger-ui/index.html
+
+###
+
+PUT http://localhost:5000/address/
+Content-Type: application/json
+
+{
+      "street": "Strasse 2",
+      "housenumber": "2",
+      "citycode": "8920",
+      "city": "Senden2",
+      "addressType": "l",
+      "customer": 1
+}
+
+###
+
+DELETE http://localhost:5000/address/3
+Content-Type: application/json
