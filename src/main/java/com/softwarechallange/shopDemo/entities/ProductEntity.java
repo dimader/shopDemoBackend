@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -20,12 +22,14 @@ public class ProductEntity {
 	 * Ein Attribut der Entität ProductEntity.
 	 */
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false, insertable = false, unique = true)
 	private Long id;
 	
 	/**
 	 * Ein Attribut der Entität ProductEntity.
 	 */
-    @Column(name = "olversion")
+    @Column(name = "olversion", insertable = false)
 	private Long olVersion;
 
     /**
@@ -219,6 +223,4 @@ public class ProductEntity {
             return false;
         return true;
     }
-
-    
 }

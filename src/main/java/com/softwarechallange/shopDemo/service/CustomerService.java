@@ -60,7 +60,7 @@ public class CustomerService {
      * @param customer Kunde.
      * @return Aktualisierter Kunde.
      */
-    public CustomerEntity update(CustomerEntity customer) {
+    public CustomerEntity updateCustomer(CustomerEntity customer) {
         customer.setChangedat(new Date());
         customer.setOlVersion(customer.getOlVersion().longValue() + 1);
         return customerRepository.save(customer);

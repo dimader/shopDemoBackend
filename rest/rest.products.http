@@ -1,0 +1,41 @@
+
+http://localhost:5000/product/
+Content-Type: application/json
+
+###
+
+http://localhost:5000/product/2
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:5000/product/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "olVersion": 1,
+  "price": 1.6,
+  "productnumber": "10203040",
+  "description": "Beschreibung 11",
+  "createdat": "2024-03-03",
+  "changedat": "2024-03-03"
+}
+
+###
+
+PUT http://localhost:5000/product/
+Content-Type: application/json
+
+{
+  "price": 21.6,
+  "productnumber": "10203060",
+  "description": "Beschreibung 21"
+}
+
+###
+
+DELETE http://localhost:5000/product/4
+Content-Type: application/json
+
+###

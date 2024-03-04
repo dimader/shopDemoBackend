@@ -121,7 +121,7 @@ public class CustomerController {
 			return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}
 
-		return ResponseEntity.ok(customerService.update(updatedCustomer));
+		return ResponseEntity.ok(customerService.updateCustomer(updatedCustomer));
 	}
 
 	/**
