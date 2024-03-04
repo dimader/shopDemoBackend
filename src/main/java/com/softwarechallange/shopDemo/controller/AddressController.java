@@ -66,7 +66,7 @@ public class AddressController {
 
     /**
 	 * Löscht die Adresse mit der übergebenen ID.
-	 * @param id Adress ID.
+	 * @param id Adresse ID.
 	 * @return Bestätigung.
 	 */
 	@Operation(description = "Deletes the 'Address' entity with the given technical id.")

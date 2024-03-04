@@ -273,4 +273,12 @@ public class CustomerEntity {
 			return false;
 		return true;
 	}
+
+	/**
+	 * Erstellt den Anzeigenamen für diesen Kunden.
+	 * @return Anzeigename.
+	 */
+	public String getDisplayName() {
+		return getSalutation() + " " + getForename() + " " + getName();
+	}
 }

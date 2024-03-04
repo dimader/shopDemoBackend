@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.softwarechallange.shopDemo.entities.AddressEntity;
 import com.softwarechallange.shopDemo.entities.CustomerEntity;
@@ -16,7 +17,14 @@ import com.softwarechallange.shopDemo.repository.CustomerRepository;
  * Service für Kundendaten.
  */
 @Service
+@Transactional
 public class CustomerService {
+    /**
+	 * Service.
+	 */
+	@Autowired
+	private OrderService orderService;
+
     /**
      * Kunden Repository.
      */
@@ -44,6 +52,15 @@ public class CustomerService {
      */
     public Optional<CustomerEntity> findCustomerById(long id) {
         return customerRepository.findById(id);
+    }
+
+    /**
+     * Liefert alle Kunden zu den übergebenen IDs.
+     * @param someIds ID Liste.
+     * @return Liste an Kunden.
+     */
+    public List<CustomerEntity> findCustomersByIds(List<Long> someIds) {
+        return customerRepository.findByIdIn(someIds);
     }
 
     /**
@@ -85,6 +102,9 @@ public class CustomerService {
         // Vorher die Adressen des Kuden löschen
         List<AddressEntity> theAddresses = findAddressesByCustomer(customer.getId());
         addressRepository.deleteAll(theAddresses);
+        
+        // Bestellung löschen
+        orderService.deleteShopOrdersByCustomer(customer.getId());
         
         customerRepository.delete(customer);
     }

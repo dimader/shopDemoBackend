@@ -23,6 +23,7 @@ import com.softwarechallange.shopDemo.service.CustomerService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.media.*;
@@ -52,7 +53,7 @@ public class CustomerController {
 					@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = CustomerEntity.class))) }),
 			@ApiResponse(responseCode = "500", description = "Response in case of a technical error ocurring on the server side.", content = @Content) })
 
-    @GetMapping(value = "/", produces = "application/json", consumes = "application/json")
+    @GetMapping(value = "/", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<List<CustomerEntity>> getAllCustomers() {
 		
 		List<CustomerEntity> theResult = customerService.findAllCustomers();

@@ -2,6 +2,7 @@ package com.softwarechallange.shopDemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.softwarechallange.shopDemo.entities.ProductEntity;
 import com.softwarechallange.shopDemo.repository.ProductRepository;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * Service für Produktdaten.
  */
 @Service
+@Transactional
 public class ProductService {
     /**
      * Produkte Repository.
