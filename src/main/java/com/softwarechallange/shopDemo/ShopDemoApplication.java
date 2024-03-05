@@ -13,6 +13,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = { "com.softwarechallange.shopDemo.entities" })
 public class ShopDemoApplication {
 
+	/**
+	 * Startpunkt der Anwendung.
+	 * @param args Args.
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(ShopDemoApplication.class, args);
 	}

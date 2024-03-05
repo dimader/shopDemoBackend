@@ -20,7 +20,7 @@ import com.softwarechallange.shopDemo.repository.CustomerRepository;
 @Transactional
 public class CustomerService {
     /**
-	 * Service.
+	 * Service für Bestellungen.
 	 */
 	@Autowired
 	private OrderService orderService;

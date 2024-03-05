@@ -85,7 +85,6 @@ public class CustomerController {
 		List<AddressEntity> addresses = customerService.findAddressesByCustomer(id);
 
 		CustomerWithAddressDto result = new CustomerWithAddressDto();
-
 		result.setCustomer(customer.get());
 		result.setAddresses(addresses);
 
