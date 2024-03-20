@@ -1,0 +1,29 @@
+name: postgres-cluster
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: demodb
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: a907dfa9df7a
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    ports:
+      - 8888:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@mail.com
+      PGADMIN_DEFAULT_PASSWORD: userpw
+    volumes:
+      - pgadmindata:/var/lib/pgadmin
+volumes:
+  pgdata:
+    name: pgdata
+  pgadmindata:
+    name: pgadmindata

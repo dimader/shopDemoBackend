@@ -58,8 +58,8 @@ Content-Type: application/json
 {
       "street": "Strasse 2",
       "housenumber": "2",
-      "citycode": "8920",
-      "city": "Senden2",
+      "citycode": "89200",
+      "city": "Ulm2",
       "addressType": "l",
       "customer": 1
 }
